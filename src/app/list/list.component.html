@@ -1,0 +1,29 @@
+
+<div class="row">
+    <div class="col s12 left">
+        <h5>Files available</h5>
+    </div>
+    <div class="col s1 right">
+        <a class="btn-floating pulse blue darken-4" (click)="refreshList()"><i class="material-icons">cached</i></a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s6 m4 l3" *ngFor="let file of files">
+        <div class="card blue darken-4 z-depth-3">
+            <div class="card-content white-text">
+                <span class="card-title">{{ file.description }}</span>
+                <p>
+                    Added: {{ file.date_added }}
+                </p>
+                <p>
+                    Downloaded: {{ file.downloaded }}
+                </p>
+            </div>
+            <div class="card-action">
+                <a (click)="download(file.idfiles)"><i class="material-icons">cloud_download</i></a>
+                <a (click)="delete(file.idfiles)"><i class="material-icons">delete</i></a>
+            </div>
+        </div>
+    </div>
+</div>

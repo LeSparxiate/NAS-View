@@ -1,0 +1,17 @@
+/* .material-icons {
+    color: white;
+} */
+
+button {
+    border-radius: 10%;
+    margin: 2px;
+}
+
+.file {
+    background-color: rgba(209, 209, 209, 0.685);
+    border-radius: 5px;
+}
+
+a {
+    cursor: pointer;
+}

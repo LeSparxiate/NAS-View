@@ -1,0 +1,8 @@
+/* nav {
+    background-color: rgb(43, 64, 161);
+} */
+
+nav .brand-logo {
+    padding-left: 6px;
+    cursor: pointer;
+}
