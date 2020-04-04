@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ListComponent } from '../list/list.component';
 
 @Component({
     selector: 'app-top-bar',
@@ -7,13 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-    constructor() { }
+    constructor(private http: HttpClient) { }
 
     ngOnInit() {
 
     }
 
+    sendFile(filetosend: FileList) {
+        const formData: FormData = new FormData();
+        formData.append('file', filetosend.item(0), filetosend.item(0).name);
+
+        this.http.post('http://192.168.0.189:4200/upload', formData).subscribe(data => {
+            console.log(data);
+        });
+    }
+
     uploadNew() {
-        window.alert('Upload!');
+        let elem: HTMLElement = document.getElementById('file-input') as HTMLElement
+        elem.click();
     }
 }

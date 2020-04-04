@@ -1,10 +1,10 @@
-
 <div class="row">
-    <div class="col s12 left">
+    <div class="col s10 left">
         <h5>Files available</h5>
     </div>
-    <div class="col s1 right">
-        <a class="btn-floating pulse blue darken-4" (click)="refreshList()"><i class="material-icons">cached</i></a>
+    <br>
+    <div class="col s1">
+        <a class="btn-floating pulse blue darken-4" (click)="refreshList(this.currpage)"><i class="material-icons">cached</i></a>
     </div>
 </div>
 
@@ -12,9 +12,9 @@
     <div class="col s6 m4 l3" *ngFor="let file of files">
         <div class="card blue darken-4 z-depth-3">
             <div class="card-content white-text">
-                <span class="card-title">{{ file.description }}</span>
+                <span class="card-title" (mouseover)='over(file.idfiles, file.description)' (mouseout)='out()'>{{ file.description.substr(0, 14) }}...</span>
                 <p>
-                    Added: {{ file.date_added }}
+                    Added: {{ file.date_added.substr(0, 19).replace('T', ' ') }}
                 </p>
                 <p>
                     Downloaded: {{ file.downloaded }}
@@ -26,4 +26,27 @@
             </div>
         </div>
     </div>
+</div>
+
+<div id="qrcode" class="hidden">
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<div id="pagesdiv" class="row">
+    <ul id="pages" class="pagination col s12">
+        <li class="waves-effect"><a (click)="refreshList(1)">1</a></li>
+        <li class="waves-effect"><a (click)="refreshList(2)">2</a></li>
+        <li class="waves-effect"><a (click)="refreshList(3)">3</a></li>
+        <li class="waves-effect"><a (click)="refreshList(4)">4</a></li>
+        <li class="waves-effect"><a (click)="refreshList(5)">5</a></li>
+        <li class="waves-effect"><a (click)="refreshList(6)">6</a></li>
+        <li class="waves-effect"><a (click)="refreshList(7)">7</a></li>
+        <li class="waves-effect"><a (click)="refreshList(8)">8</a></li>
+        <li class="waves-effect"><a (click)="refreshList(9)">9</a></li>
+        <li class="waves-effect"><a (click)="refreshList(10)">10</a></li>
+    </ul>
 </div>

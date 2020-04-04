@@ -1,6 +1,6 @@
-/* .material-icons {
+.material-icons {
     color: white;
-} */
+}
 
 button {
     border-radius: 10%;
@@ -14,4 +14,40 @@ button {
 
 a {
     cursor: pointer;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+#qrcode {
+    z-index: 9;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-radius: 5px;
+    border-color: grey;
+    box-shadow: 5px 5px 15px black;
+    background-color: white;
+}
+
+#pagesdiv {
+    position: fixed;
+    z-index: 10;
+    top: 92%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-color: grey;
+    box-shadow: 5px 5px 15px black;
+    background-color: white;
+}
+
+.selected {
+    background-color: rgb(82, 82, 255);
+    color: white;
 }

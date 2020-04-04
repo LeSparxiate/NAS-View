@@ -1,8 +1,9 @@
 <nav class="blue darken-4 z-depth-3">
     <div class="nav-wrapper">
         <a class="brand-logo">NAS View</a>
-        <ul class="right hide-on-med-and-down">
+        <ul class="right">
             <li><a (click)="uploadNew()"><i class="material-icons left">add</i>Upload</a></li>
+            <input (change)="sendFile($event.target.files)" id="file-input" type="file" />
         </ul>
     </div>
 </nav>
